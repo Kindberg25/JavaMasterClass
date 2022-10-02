@@ -24,14 +24,6 @@ The scenario is:
 2. The returned array from getIntegers() is then used to call sortIntegers().
 3. The returned array from sortIntegers() is then printed to the console.
 [Do not try and implement this. It is to give you an idea of how the methods will be used]
-
-TIP: you will have to figure out how to copy the array elements from the passed array into a new array and sort them and
- return the new sorted array.
-TIP: Instantiate (create) the Scanner object inside the method.
-TIP: Be extremely careful about spaces in the printed message.
-TIP: Make sure the Scanner class is imported.
-NOTE: All methods should be defined as public static NOT public.
-NOTE: Do not add a main method to the solution code.
  */
 
 import java.util.Arrays;
