@@ -15,7 +15,7 @@ Five(5) methods are also needed inside the Hamburger class. Four(4) for adding u
  one(1) for printing out an itemized listing of the final hamburger with addons, if any, and the total price. Remember
  that a name and price must be accepted as parameters in the first four methods so that the price of the hamburger is
  adjusted accordingly. These methods should be named addHamburgerAddition1, addHamburgerAddition2, addHamburgerAddition3,
- addHamburgerAddition4, and itemizehamburger. The first four methods do not return values, but the last method does
+ addHamburgerAddition4, and itemizeHamburger. The first four methods do not return values, but the last method does
  return the total price of the hamburger of type double, which includes the base price of the hamburger plus any additional
  items.
 
@@ -37,6 +37,20 @@ The method also returns the total price of the healthy burger of type double.
  */
 public class Main {
     public static void main(String[] args) {
+        Hamburger hamburger = new Hamburger("Basic", "Sausage", 3.56, "White");
+        hamburger.addHamburgerAddition1("Tomato", 0.27);
+        hamburger.addHamburgerAddition2("Lettuce", 0.75);
+        hamburger.addHamburgerAddition3("Cheese", 1.13);
+        System.out.println("Total Burger price is " + hamburger.itemizeHamburger());
+
+        HealthyBurger healthyBurger = new HealthyBurger("Bacon", 5.67);
+        healthyBurger.addHamburgerAddition1("Egg", 5.43);
+        healthyBurger.addHealthyAddition1("Lentils", 3.41);
+        System.out.println("Total Healthy Burger price is  " + healthyBurger.itemizeHamburger());
+
+        DeluxeBurger db = new DeluxeBurger();
+        db.addHamburgerAddition3("Should not do this", 50.53);
+        System.out.println("Total Deluxe Burger price is " + db.itemizeHamburger());
 
     }
 }

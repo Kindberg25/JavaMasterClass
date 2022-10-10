@@ -18,9 +18,9 @@ Five(5) methods are also needed inside the Hamburger class. Four(4) for adding u
  */
 
 public class Hamburger {
-    private double price;
     private String name;
     private String meat;
+    private double price;
     private String breadRollType;
 
     private String addition1Name;
@@ -33,21 +33,12 @@ public class Hamburger {
     private double addition4Price;
 
 
-    public Hamburger(double price, String name, String meat, String breadRollType) {
-        this.price = price;
+    public Hamburger(String name, String meat, double price, String breadRollType) {
         this.name = name;
         this.meat = meat;
+        this.price = price;
         this.breadRollType = breadRollType;
     }
-    /*
-    Five(5) methods are also needed inside the Hamburger class. Four(4) for adding up to four additions to the hamburger and
- one(1) for printing out an itemized listing of the final hamburger with addons, if any, and the total price. Remember
- that a name and price must be accepted as parameters in the first four methods so that the price of the hamburger is
- adjusted accordingly. These methods should be named addHamburgerAddition1, addHamburgerAddition2, addHamburgerAddition3,
- addHamburgerAddition4, and itemizehamburger. The first four methods do not return values, but the last method does
- return the total price of the hamburger of type double, which includes the base price of the hamburger plus any additional
- items.
-     */
 
     public void addHamburgerAddition1(String name, double price) {
         this.addition1Name = name;
@@ -69,8 +60,31 @@ public class Hamburger {
         this.addition3Price = price;
     }
 
-    public void itemizeHamburger() {
+    public double itemizeHamburger() {
+        double totalHamburgerPrice = this.price;
+        System.out.println("The " + this.name + " with " + this.meat + " meat and " + this.breadRollType  + " for a total cost of " + this.price + "$.");
 
+        if (this.addition1Name != null) {
+            totalHamburgerPrice += this.addition1Price;
+            System.out.println("Additional " + this.addition1Name + " for a cost of " + this.addition1Price + "$.");
+        }
+
+        if (this.addition2Name != null) {
+            totalHamburgerPrice += this.addition2Price;
+            System.out.println("Additional " + this.addition2Name + " for a cost of " + this.addition2Price + "$.");
+        }
+
+        if (this.addition3Name != null) {
+            totalHamburgerPrice += this.addition3Price;
+            System.out.println("Additional " + this.addition3Name + " for a cost of " + this.addition3Price + "$.");
+        }
+
+        if (this.addition4Name != null) {
+            totalHamburgerPrice += this.addition4Price;
+            System.out.println("Additional " + this.addition4Name + " for a cost of " + this.addition4Price + "$.");
+        }
+
+        return totalHamburgerPrice;
     }
 
 
